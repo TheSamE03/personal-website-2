@@ -1,22 +1,26 @@
-// app/layout.jsx
 import "./globals.css";
+import { ReactNode } from "react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
 export const metadata = {
-  title: "Samuel Erne • Portfolio",
-  description: "Physics Student & Researcher",
+  title: "Sam Erne • Portfolio",
+  description: "Physics major & developer",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body className="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
-        <Navbar />
-        <main className="max-w-4xl mx-auto px-4 py-8">
-          {children}
-        </main>
-        <Footer />
+        <Providers>
+          <Navbar />
+          <main className="max-w-4xl mx-auto px-4 py-8">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
