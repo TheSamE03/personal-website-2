@@ -1,6 +1,7 @@
 import "./globals.css";
 import { ReactNode } from "react";
 import { Navbar } from "../components/Navbar";
+import { Providers } from "../components/Providers";
 import { Footer } from "../components/Footer";
 
 interface RootLayoutProps {
