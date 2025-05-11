@@ -10,23 +10,24 @@ export default function ContactForm() {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form),
-    });
-    if (response.ok) {
-      alert('Message sent successfully!');
-      setForm({ name: "", email: "", message: "" }); // Clear the form
-    } else {
-      alert('Failed to send message. Please try again.');
+    e.preventDefault();
+    try {
+        const response = await fetch('/app/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(form),
+        });
+        if (response.ok) {
+            alert('Message sent successfully!');
+            setForm({ name: '', email: '', message: '' }); // Clear the form
+        } else {
+            const errorData = await response.json();
+            alert(`Error: ${errorData.error || 'Failed to send message.'}`);
+        }
+    } catch (error) {
+        console.error('Error submitting form:', error);
+        alert('An unexpected error occurred.');
     }
-  } catch (error) {
-    console.error('Error submitting form:', error);
-    alert('An error occurred. Please try again.');
-  }
 };
 
   return (
