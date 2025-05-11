@@ -12,7 +12,7 @@ export default function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch('/api/send-email', {
+        const response = await fetch('/api/contact/send-email.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(form),
