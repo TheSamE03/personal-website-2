@@ -12,17 +12,17 @@ export default async function handler(req, res) {
         try {
             // Create a transporter with your email service credentials
             const transporter = nodemailer.createTransport({
-                service: 'gmail', // e.g., Gmail, Outlook, etc.
+                service: 'gmail',
                 auth: {
-                    user: EMAIL_USER, 
-                    pass: EMAIL_PASS, 
+                    user: process.env.EMAIL_USER,
+                    pass: process.env.EMAIL_PASS,
                 },
             });
 
             // Email options
             const mailOptions = {
                 from: `"${name}" <${email}>`, // Sender details
-                to: EMAIL_USER , // Your email to receive messages
+                to: process.env.EMAIL_USER , // Your email to receive messages
                 subject: 'New Contact Form Submission',
                 text: `You have a new message from ${name} (${email}):\n\n${message}`,
             };
