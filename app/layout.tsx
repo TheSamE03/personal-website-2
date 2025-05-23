@@ -23,6 +23,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <main className="max-w-4xl mx-auto px-4 py-8">{children}</main>
           <Footer />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
