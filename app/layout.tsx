@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import { Navbar } from "../components/Navbar";
 import { Providers } from "../components/Providers";
 import { Footer } from "../components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 interface RootLayoutProps {
   children: ReactNode;
