@@ -7,7 +7,8 @@ export default function Resume() {
         <h2 className="text-2xl font-semibold">Education</h2>
         <ul className="list-disc list-inside">
           <li>Ohio University, B.S. Physics (Dec 2025)</li>
-          <li>Minors: Astronomy, Mathematics</li>
+          <li>Ohio University, B.S. Applied Mathematics (May 2026)</li>
+          <li>Minor: Astronomy</li>
         </ul>
       </section>
 
